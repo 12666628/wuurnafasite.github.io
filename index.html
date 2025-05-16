@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon Espace Documentaire</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur mon espace documentaire</h1>
+    </header>
+
+    <main>
+        <section class="upload-section">
+            <h2>Uploader un document</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" />
+                <button type="submit">Télécharger</button>
+            </form>
+        </section>
+
+        <section class="docs-section">
+            <h2>Mes documents</h2>
+            <ul id="docList">
+                <li>Aucun document pour le moment.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hamady Balnde</p>
+    </footer>
+
+    <script>
+        // Script simple pour afficher le nom du fichier uploadé
+        const uploadForm = document.getElementById('uploadForm');
+        const fileInput = document.getElementById('fileInput');
+        const docList = document.getElementById('docList');
+
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const file = fileInput.files[0];
+            if(file) {
+                // Ajouter le nom du fichier à la liste
+                if(docList.children[0].textContent === "Aucun document pour le moment.") {
+                    docList.innerHTML = '';
+                }
+                const li = document.createElement('li');
+                li.textContent = file.name;
+                docList.appendChild(li);
+                fileInput.value = ''; // Reset input
+                alert('Fichier "' + file.name + '" ajouté à la liste (local uniquement)');
+            } else {
+                alert('Veuillez choisir un fichier avant de télécharger.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1.5em 0;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+.upload-section, .docs-section {
+    background: white;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin: 0 0 1em;
+}
+
+form {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+input[type="file"] {
+    flex-grow: 1;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul#docList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul#docList li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eee;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.9em;
+    color: #777;
+}
